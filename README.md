@@ -10,7 +10,7 @@
 
 ## Overview
 
-In this repository, we will be training a Residual Neural Network (ResNet) on image patches of digital pathology scans to detect metastatic cancer. This data is provided by the [PatchCamelyon Grand Challenge](https://patchcamelyon.grand-challenge.org/). As described in the challenge, "PCam packs the clinically-relevant task of metastasis detection into a straight-forward binary image classification task, akin to CIFAR-10 and MNIST. Models can easily be trained on a single GPU in a couple hours, and achieve competitive scores in the Camelyon16 tasks of tumor detection and whole-slide image diagnosis. Furthermore, the balance between task-difficulty and tractability makes it a prime suspect for fundamental machine learning research on topics as active learning, model uncertainty, and explainability."
+In this repository, we will be training a Residual Neural Network (ResNet) on image patches of digital pathology scans to detect metastatic cancer. This data is provided by the [PatchCamelyon Grand Challenge](https://patchcamelyon.grand-challenge.org/). As described in the challenge, *"PCam packs the clinically-relevant task of metastasis detection into a straight-forward binary image classification task, akin to CIFAR-10 and MNIST. Models can easily be trained on a single GPU in a couple hours, and achieve competitive scores in the Camelyon16 tasks of tumor detection and whole-slide image diagnosis. Furthermore, the balance between task-difficulty and tractability makes it a prime suspect for fundamental machine learning research on topics as active learning, model uncertainty, and explainability."*
 
 We will be leveraging AWS for this challenge and can divide our methodology into the following categories:
 
