@@ -3,32 +3,26 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Data Collection](#data-collection)
-- [Sentiment Analysis](#sentiment-analysis)
 - [Data Exploration](#data-exploration)
-- [Forecasting](#forecasting)
+- [Hyperparameter Tuning](#hyperparameter-tuning)
+- [Model Evaluation](#model-evaluation)
+- [Deployment](#deployment)
 
 ## Overview
 
-In this repository, we will be training a Residual Neural Network (ResNet) on image patches of pathology slides to detect metastatic cancer. This data is provided by the [PatchCamelyon Grand Challenge](https://patchcamelyon.grand-challenge.org/) and described with the following quote:
+In this repository, we will be training a Residual Neural Network (ResNet) on image patches of digital pathology scans to detect metastatic cancer. This data is provided by the [PatchCamelyon Grand Challenge](https://patchcamelyon.grand-challenge.org/). As described in the challenge, "PCam packs the clinically-relevant task of metastasis detection into a straight-forward binary image classification task, akin to CIFAR-10 and MNIST. Models can easily be trained on a single GPU in a couple hours, and achieve competitive scores in the Camelyon16 tasks of tumor detection and whole-slide image diagnosis. Furthermore, the balance between task-difficulty and tractability makes it a prime suspect for fundamental machine learning research on topics as active learning, model uncertainty, and explainability."
 
-"PCam packs the clinically-relevant task of metastasis detection into a straight-forward binary image classification task, akin to CIFAR-10 and MNIST. Models can easily be trained on a single GPU in a couple hours, and achieve competitive scores in the Camelyon16 tasks of tumor detection and whole-slide image diagnosis. Furthermore, the balance between task-difficulty and tractability makes it a prime suspect for fundamental machine learning research on topics as active learning, model uncertainty, and explainability."
-![image](https://user-images.githubusercontent.com/59262833/136292972-c812512e-2310-4123-8be5-4d12ac2fd5bf.png)
+We will be leveraging AWS for this challenge and can divide our methodology into the following categories:
 
+**1. Data Exploration** - explore images after loading data into S3 and prepare data for model training.
 
-Predicting the behavior of the stock market is one of the most challenging time series problems in existence. It also one of the most commonly attempted because of the massive potential rewards for making accurate predictions. In this analysis we are going to explore sentiment data from the most eccentric investing community on Reddit, [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets/), and try to answer the question of whether or not this information adds predictive power to a forecasting model that predicts the price of TSLA.
+**2. Hyperparameter Tuning** - run SageMaker hyperparameter tuning job and evaluate results on validation set.
 
-The analysis is separated into four categories:
+**3. Model Evaluation** - train ResNet model and evaluate results on test set.
 
-**1. Data Collection** - scraping user comments from Reddit using PRAW and collecting TSLA's daily closing prices from Yahoo Finance.
+**4. Deployment** - deploy model to API.
 
-**2. Sentiment Analysis** - engineering scores from user comments to measure investor sentiment.
-
-**3. Data Exploration** - exploratory data analysis and processing to enhance performance of machine learning models.
-
-**4. Forecasting** - predicting the future price of TSLA using technical indicators and features from sentiment analysis.
-
-## Data Collection
+## Data Exploration
 
 **Reddit**
 
@@ -64,7 +58,7 @@ pip install TA-Lib
 
 To learn more about the `TA-Lib` library, please refer to the [official documentation](https://mrjbq7.github.io/ta-lib/doc_index.html).
 
-## Sentiment Analysis
+## Hyperparameter Tuning
 
 In this section, we will be analyzing our user comments from Reddit and using NLP techniques to engineer scores that measure investor sentiment towards TSLA. This all takes place in the `sentiment_analysis.ipynb` notebook.
 
@@ -76,11 +70,11 @@ pip install nltk
 
 To learn more about the `nltk` library, please refer to the [official documentation](https://www.nltk.org/).
 
-## Data Exploration
+## Model Evaluation
 
 Before training our machine learning models, we work in the `exploratory_data_analysis.ipynb` notebook to further process and examine the data from the previous sections. This includes feature engineering to enhance the predictive power of variables, as well as force sequence dependancy into the models. 
 
-## Forecasting
+## Deployment
 
 Bringing everything together, we use our sentiment scores and technical indicators to predict the future price of TSLA. We use a simple ARIMA model as our baseline in the `arima_forecasting` notebook, and then attempt to improve performance using the following models in our `ml_forecasting.ipynb` notebook:
 - Random Forest
