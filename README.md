@@ -3,7 +3,9 @@ __________________________________________________________________
 
 # PCam-Image-Classification
 
-![alt text](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?raw=true)
+![pcam](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?raw=true)
+
+![pcam](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg)
 
 ## Table of Contents
 
