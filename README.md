@@ -5,7 +5,9 @@ __________________________________________________________________
 
 ![pcam](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?raw=true)
 
-![pcam](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg)
+<p align="center">
+  <img src="jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?raw=true" width="350" title="hover text">
+</p>
 
 ## Table of Contents
 
