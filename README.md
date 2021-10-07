@@ -1,6 +1,7 @@
 # PCam-Image-Classification
 
-## ***UNDER CONSTRUCTION***
+## UNDER CONSTRUCTION
+__________________________________________________________________
 
 ## Table of Contents
 
