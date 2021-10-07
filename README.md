@@ -13,6 +13,9 @@ __________________________________________________________________
   <img src="./main/pcam.jpeg?raw=true" width="350" title="hover text">
 </p>
 
+![Alt text]https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?sanitize=true)
+<img src="https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?sanitize=true">
+
 ## Table of Contents
 
 - [Overview](#overview)
