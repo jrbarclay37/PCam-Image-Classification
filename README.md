@@ -3,6 +3,8 @@ __________________________________________________________________
 
 # PCam-Image-Classification
 
+![alt text](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?raw=true)
+
 ## Table of Contents
 
 - [Overview](#overview)
