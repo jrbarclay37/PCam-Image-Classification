@@ -5,17 +5,6 @@ __________________________________________________________________
 
 ![pcam](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?raw=true)
 
-<p align="center">
-  <img src="https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?raw=true" width="350" title="hover text">
-</p>
-
-<p align="center">
-  <img src="./main/pcam.jpeg?raw=true" width="350" title="hover text">
-</p>
-
-![Alt text](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?sanitize=true)
-<img src="https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/pcam.jpeg?sanitize=true">
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -47,7 +36,7 @@ This notebook will also be used for exploring our images to understand the data 
 
 ## Hyperparameter Tuning
 
-
+Now that our data is ready for training, we can launch an [Automatic Model Tuning job](https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning.html) (a.k.a. hyperparameter tuning) in our `hyperparameter-tuning.ipynb` notebook with SageMaker. **Insert details on why this is advantageous**
 
 Using the results from our hyperparameter tuning jobs, we experimented with reducing the learning rate at certain epochs using the `lr_scheduler` and `lr_factor` parameters to help the model converge. This lead to improvement of reaching 88.5% accuracy on our validation set. Our model was still overfitting, so we attempted to solve for this by adjusting the regularization parameters `weight_decay` and `betas`. Unfortunately, this showed only marginal improvement and we exceeded our budget for hyperparameter tuning.
 
