@@ -9,13 +9,13 @@ __________________________________________________________________
 - [Data Exploration](#data-exploration)
 - [Hyperparameter Tuning](#hyperparameter-tuning)
 - [Model Evaluation](#model-evaluation)
-- [Deployment](#deployment)
+- [Model Deployment](#model-deployment)
 
 ## Overview
 
 In this repository, we will be training a Residual Neural Network (ResNet) on image patches of digital pathology scans to detect metastatic cancer. This data is provided by the [PatchCamelyon Grand Challenge](https://patchcamelyon.grand-challenge.org/). As described in the challenge, *"PCam packs the clinically-relevant task of metastasis detection into a straight-forward binary image classification task, akin to CIFAR-10 and MNIST. Models can easily be trained on a single GPU in a couple hours, and achieve competitive scores in the Camelyon16 tasks of tumor detection and whole-slide image diagnosis. Furthermore, the balance between task-difficulty and tractability makes it a prime suspect for fundamental machine learning research on topics as active learning, model uncertainty, and explainability."*
 
-We will be leveraging AWS for this challenge and can divide our methodology into the following categories:
+We will be leveraging Amazon SageMaker and using their built-in [Image Classification algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/image-classification.html) for this challenge. Our methodology can be divided into the following categories:
 
 **1. Data Exploration** - explore images after loading data into S3 and prepare data for model training.
 
@@ -27,41 +27,14 @@ We will be leveraging AWS for this challenge and can divide our methodology into
 
 ## Data Exploration
 
-**Reddit**
+We will be working with the `data-exploration.ipynb` notebook to convert our HDF5 data files into JPEG image files and prepare our data for training in pipe mode by creating augmented manifest files. [Pipe mode](https://aws.amazon.com/blogs/machine-learning/using-pipe-input-mode-for-amazon-sagemaker-algorithms/) allows us to stream our data for training instead of being downloaded first, which results in faster training and reduced disk space utilization.
 
-We will be working with the `scraping_reddit_comments.ipynb` notebook to scrape user comments from r/wallstreetbets. You will need to install python's Reddit API wrapper, `PRAW`.
+This notebook will also be used for exploring our images to understand the data we are working with and whether additional data processing may be needed before training our model.
 
-```console
-pip install praw
-```
-
-You will also need to [register](https://www.reddit.com/prefs/apps/) an account in order to access the API.
-
-To learn more about the `PRAW` API wrapper, please refer to the [official documentation](https://praw.readthedocs.io/en/latest/).
-
-To mitigate Reddit's slow response times, we also leverage `pushshift.io`. This is a project that warehouses all of Reddit's data, allowing us to query the data more efficiently with significantly faster response times.
-
-To learn more about `pushshift.io`, please refer to the [official documentation](https://pushshift.io/api-parameters/).
-
-**Yahoo Finance**
-
-We will be collecting historical data on TSLA's daily closing prices using `query_tsla_data.ipynb`. You will need to install `yfinance`.
-
-```console
-pip install yfinance
-```
-
-To learn more about the `yfinance` library, please refer to the [official documentation](https://pypi.org/project/yfinance/).
-
-Additionally, we will use the `TA-Lib` to compute our technical indicators to be used as features in our model. 
-
-```console
-pip install TA-Lib
-```
-
-To learn more about the `TA-Lib` library, please refer to the [official documentation](https://mrjbq7.github.io/ta-lib/doc_index.html).
 
 ## Hyperparameter Tuning
+
+
 
 In this section, we will be analyzing our user comments from Reddit and using NLP techniques to engineer scores that measure investor sentiment towards TSLA. This all takes place in the `sentiment_analysis.ipynb` notebook.
 
@@ -75,9 +48,22 @@ To learn more about the `nltk` library, please refer to the [official documentat
 
 ## Model Evaluation
 
-Before training our machine learning models, we work in the `exploratory_data_analysis.ipynb` notebook to further process and examine the data from the previous sections. This includes feature engineering to enhance the predictive power of variables, as well as force sequence dependancy into the models. 
+After selecting our parameters from our hyperparameter tuning, we can train our model and evaluate it's performance in the `model-evaluation.ipynb` notebook.
 
-## Deployment
+
+
+Our final model achieves the following performance:
+- Recall: 0.88
+- Precision: 0.88
+- F1 Score: 0.88
+- AUC: 0.945
+- Accuracy: 88%
+
+Our model was still
+
+This was data was far more challenging than the popular [MNIST dataset](https://www.tensorflow.org/datasets/catalog/mnist), so we should be satisfied with our 88% accuracy. However, 
+
+## Model Deployment
 
 Bringing everything together, we use our sentiment scores and technical indicators to predict the future price of TSLA. We use a simple ARIMA model as our baseline in the `arima_forecasting` notebook, and then attempt to improve performance using the following models in our `ml_forecasting.ipynb` notebook:
 - Random Forest
