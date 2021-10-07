@@ -56,31 +56,4 @@ This was data was far more challenging than the popular [MNIST dataset](https://
 
 ## Model Deployment
 
-Bringing everything together, we use our sentiment scores and technical indicators to predict the future price of TSLA. We use a simple ARIMA model as our baseline in the `arima_forecasting` notebook, and then attempt to improve performance using the following models in our `ml_forecasting.ipynb` notebook:
-- Random Forest
-- XGBoost
-- LSTM
-
-For these final workbooks, you should have `statsmodels`, `scikit-learn`, `xgboost`, and `keras` installed on your machine. 
-
-```console
-pip install statsmodels
-```
-
-```console
-pip install scikit-learn
-```
-
-```console
-pip install xgboost
-```
-
-```console
-pip install keras
-```
-
-To learn more about the documentation for each of these libraries, please refer to the following links:
-- [statsmodels](https://www.statsmodels.org/stable/index.html)
-- [scikit-learn](https://scikit-learn.org/stable/)
-- [xgboost](https://xgboost.readthedocs.io/en/latest/)
-- [keras](https://keras.io/about/)
+Finally, we can host our model for real-time inference using the `model-deployment.ipynb` notebook.
