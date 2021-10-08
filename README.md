@@ -25,7 +25,7 @@ We will be leveraging [Amazon SageMaker](https://aws.amazon.com/sagemaker/) and 
 
 **3. Model Evaluation** - train ResNet model and evaluate results on test set.
 
-**4. Model Deployment** - deploy model to API.
+**4. Model Deployment** - deploy model for real-time inference.
 
 ## Data Exploration
 
@@ -36,12 +36,11 @@ This notebook will also be used for exploring our images to understand the data 
 
 ## Hyperparameter Tuning
 
-Now that our data is ready for training, we can launch an [Automatic Model Tuning job](https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning.html) (a.k.a. hyperparameter tuning) in our `hyperparameter-tuning.ipynb` notebook with SageMaker. **Insert details on why this is advantageous**
+Now that our data is ready for training, we can launch an [Automatic Model Tuning job](https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning.html) (a.k.a. hyperparameter tuning) in our `hyperparameter-tuning.ipynb` notebook with SageMaker. Unlike classic gridsearch for selecting parameters, automatic model tuning uses Bayesian Search to intelligently choose the best hyperparameters and learn from previous training jobs, significantly reducing the time required to tune your model.
 
-Using the results from our hyperparameter tuning jobs, we experimented with reducing the learning rate at certain epochs using the `lr_scheduler` and `lr_factor` parameters to help the model converge. This lead to improvement of reaching 88.5% accuracy on our validation set. Our model was still overfitting, so we attempted to solve for this by adjusting the regularization parameters `weight_decay` and `betas`. Unfortunately, this showed only marginal improvement and we exceeded our budget for hyperparameter tuning.
+Using the results from our hyperparameter tuning jobs, we discovered that many of our models looked promising, but failed to converge on a solution because the learning rate was too large and overshot. We experimented with reducing the learning rate at certain epochs using the `lr_scheduler` and `lr_factor` parameters to help the model converge. This led to improvement of reaching 88.5% accuracy on our validation set. Our model was still overfitting, so we attempted to solve for this by adjusting the regularization parameters `weight_decay` and `betas`. Unfortunately, this showed only marginal improvement. At this point, we exceeded our budget for hyperparameter tuning and had to move forward.
 
-**Insert Paragraph about data augmentation**
-
+Additional time and funding would be well spent on further experiments with the learning rate schedules to help the model converge. It is also possible that the quality of the data could be a limitation. We may benefit from applying more sophisticated data augmentation methods for this specific use-case where crop_color_transform may not be the best for histopathology images. [This article](https://towardsdatascience.com/5-ways-to-make-histopathology-image-models-more-robust-to-domain-shifts-323d4d21d889) provides a great analysis on possible data augmentation approaches and the sensitivity of these images to various transformations.
 
 ## Model Evaluation
 
