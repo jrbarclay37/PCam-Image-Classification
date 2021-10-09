@@ -54,4 +54,4 @@ This was data was far more challenging than the popular [MNIST dataset](https://
 
 ## Model Deployment
 
-Finally, we can host our model for real-time inference using the `model-deployment.ipynb` notebook.
+Finally, we can host our model for real-time inference by creating a [SageMaker endpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html) in the `model-deployment.ipynb` notebook.
