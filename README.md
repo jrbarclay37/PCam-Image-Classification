@@ -50,7 +50,7 @@ Our final model achieves the following performance:
 - **AUC:** 0.945
 - **Accuracy:** 87.8%
 
-This was data was far more challenging than the popular [MNIST dataset](https://www.tensorflow.org/datasets/catalog/mnist), so we should be satisfied with our 88% accuracy. However, in the real-world this is insufficient for full automated decision-making, but could be valuable in an AI assistance use-case where the predictions are used to support the histopathologist in their decision.
+This was data was far more challenging than the popular [MNIST dataset](https://www.tensorflow.org/datasets/catalog/mnist), so we should be satisfied with our 88% accuracy for this project. However, in the real-world this is insufficient for full automated decision-making, but could be valuable in an AI assistance use-case where the predictions are used to support the histopathologist in their decision.
 
 ## Model Deployment
 
