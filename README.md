@@ -47,11 +47,11 @@ Additional time and funding would be well spent on further experiments with the 
 After selecting our parameters from our hyperparameter tuning, we can train our model and evaluate it's performance in the `model-evaluation.ipynb` notebook.
 
 Our final model achieves the following performance:
-- Recall: 0.88
-- Precision: 0.88
-- F1 Score: 0.88
+- Recall: **0.876**
+- **Precision**: 0.880
+- F1 Score: 0.878
 - AUC: 0.945
-- Accuracy: 88%
+- Accuracy: 87.8%
 
 This was data was far more challenging than the popular [MNIST dataset](https://www.tensorflow.org/datasets/catalog/mnist), so we should be satisfied with our 88% accuracy. However, in the real-world this is not good enough for full automated decision-making, but could be valuable in an AI assistance use-case where this aids the histopathologist by displaying the prediction and confidence.
 
