@@ -1,6 +1,3 @@
-## UNDER CONSTRUCTION
-__________________________________________________________________
-
 # PCam-Image-Classification
 
 ![pcam](https://github.com/jrbarclay37/PCam-Image-Classification/blob/main/images/pcam.jpeg?raw=true)
