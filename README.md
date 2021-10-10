@@ -12,7 +12,9 @@
 
 ## Overview
 
-In this repository, we will be training a Residual Neural Network (ResNet) on image patches of digital pathology scans to detect metastatic cancer. This data is provided by the [PatchCamelyon Grand Challenge](https://patchcamelyon.grand-challenge.org/). As described in the challenge, *"PCam packs the clinically-relevant task of metastasis detection into a straight-forward binary image classification task, akin to CIFAR-10 and MNIST. Models can easily be trained on a single GPU in a couple hours, and achieve competitive scores in the Camelyon16 tasks of tumor detection and whole-slide image diagnosis. Furthermore, the balance between task-difficulty and tractability makes it a prime suspect for fundamental machine learning research on topics as active learning, model uncertainty, and explainability."*
+In this repository, we will be training a Residual Neural Network (ResNet) on image patches of digital pathology scans of lymph node sections to detect metastatic cancer. The data provided by the [PatchCamelyon Grand Challenge](https://patchcamelyon.grand-challenge.org/) contains 327,680 color images (96 x 96px) annoted with a binary label indicating presence of metastatic tissue.
+
+As described in the challenge, *"PCam packs the clinically-relevant task of metastasis detection into a straight-forward binary image classification task, akin to CIFAR-10 and MNIST. Models can easily be trained on a single GPU in a couple hours, and achieve competitive scores in the Camelyon16 tasks of tumor detection and whole-slide image diagnosis. Furthermore, the balance between task-difficulty and tractability makes it a prime suspect for fundamental machine learning research on topics as active learning, model uncertainty, and explainability."*
 
 We will be leveraging [Amazon SageMaker](https://aws.amazon.com/sagemaker/) and using their built-in [Image Classification algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/image-classification.html) for this challenge. Our methodology can be divided into the following categories:
 
