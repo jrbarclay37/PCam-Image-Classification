@@ -30,7 +30,7 @@ I will be leveraging [Amazon SageMaker](https://aws.amazon.com/sagemaker/) and u
 
 I will be working with the `data-exploration.ipynb` notebook to convert the HDF5 data files into JPEG image files and prepare the data for training in pipe mode by creating augmented manifest files. [Pipe mode](https://aws.amazon.com/blogs/machine-learning/using-pipe-input-mode-for-amazon-sagemaker-algorithms/) allows for streaming the data for training instead of being downloaded first, which results in faster training and reduced disk space utilization.
 
-This notebook will also be used for exploring the images to understand the data I am working with and whether additional processing may be needed before training our model.
+This notebook will also be used for exploring the images to understand the data I am working with and whether additional processing may be needed before training the model.
 
 ## Hyperparameter Tuning
 
